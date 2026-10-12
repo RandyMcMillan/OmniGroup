@@ -1144,8 +1144,10 @@ static NSString * const IdealWidthConstraintIdentifier = @"OAPreferenceControlle
         identifier = [description objectForKey:@"shortTitle" defaultObject:titleEnglish];
     }
 
-    // All our preference pane identifiers should really be in reverse DNS style now.
-    OBASSERT([identifier containsString:@"."] || [[[NSBundle mainBundle] bundleIdentifier] isEqualToString:@"com.omnigroup.OmniWeb6"]);
+    // Legacy preference panes in this app still use short identifiers such as GeneralPrefPage.
+    // Keep accepting them so existing preference registrations continue to work.
+    if (![identifier containsString:@"."] && ![[[NSBundle mainBundle] bundleIdentifier] isEqualToString:@"com.omnigroup.OmniWeb6"])
+        NSLog(@"%s: allowing legacy preference identifier '%@'", __PRETTY_FUNCTION__, identifier);
     
     // Allow client records to hidden by default.  This is useful for developer preferences or other preference panes that aren't fit for human consumption yet.
     if ([description boolForKey:@"hidden" defaultValue:NO]) {

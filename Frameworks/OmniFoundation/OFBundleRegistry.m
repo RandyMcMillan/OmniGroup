@@ -86,8 +86,7 @@ static NSUserDefaults *StandardUserDefaults = nil;
         NSString *copyright = [infoDictionary objectForKey:@"NSHumanReadableCopyright"];
         NSCharacterSet *decimalDigits = [NSCharacterSet decimalDigitCharacterSet];
         NSUInteger yearStart = [copyright rangeOfCharacterFromSet:decimalDigits].location; // just returns the first character
-        OBASSERT(yearStart != NSNotFound);
-        if (yearStart != NSNotFound) {
+        if (yearStart != NSNotFound && [copyright length] >= yearStart + 4) {
             NSString *year = [copyright substringWithRange:NSMakeRange(yearStart, 4)];
             OBASSERT([year rangeOfCharacterFromSet:[decimalDigits invertedSet]].location == NSNotFound);
         }
