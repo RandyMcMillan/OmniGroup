@@ -248,7 +248,7 @@ OBDidLoad(^{
 
 - (void)abortProcessing;
 {
-    OWHTTPProcessor *strongSelf = self;
+    __attribute__((unused)) OWHTTPProcessor *strongSelf = self;
     OWHTTPSessionQueue *myQueue = queue;
     OBRetainAutorelease(myQueue);
     [super abortProcessing];
@@ -260,4 +260,3 @@ OBDidLoad(^{
 }
 
 @end
-

@@ -1676,7 +1676,7 @@ processStatus:
     OWParameterizedContentType *parameterizedContentType;
     OWContent *resultContent;
     NSUInteger totalLength;
-    NSUInteger precedingSkipLength, followingSkipLength;
+    NSUInteger precedingSkipLength, __attribute__((unused)) followingSkipLength;
     long long startPosition = 0LL;
 
     NSString *receivedRangeString = [headerDictionary lastStringForKey:@"content-range"];

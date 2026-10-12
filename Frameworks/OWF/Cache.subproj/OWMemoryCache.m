@@ -522,7 +522,7 @@ RCS_ID("$Id$");
 
     NSTimeInterval nextExpire = 60.0 * 60.0;
     BOOL anExpire = NO;
-    unsigned arcsAccepted = 0;
+    __attribute__((unused)) unsigned arcsAccepted = 0;
     NSMutableArray *entriesToOffer = [[NSMutableArray alloc] init];
     NSMutableSet *shouldPurge = [NSMutableSet set];
     [knownOtherContent removeAllObjects];
@@ -642,9 +642,9 @@ RCS_ID("$Id$");
     NSTimeInterval began = [NSDate timeIntervalSinceReferenceDate];
 #endif
 
-    unsigned rowsTouched = 0;
-    unsigned rowsEmptied = 0;
-    unsigned entriesRemoved = 0;
+    __attribute__((unused)) unsigned rowsTouched = 0;
+    __attribute__((unused)) unsigned rowsEmptied = 0;
+    __attribute__((unused)) unsigned entriesRemoved = 0;
 
     while ([touchedRows count] > 0) {
         OWContent *purgeRow = [touchedRows anyObject];
