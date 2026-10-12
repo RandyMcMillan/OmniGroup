@@ -51,7 +51,7 @@ static OWContentType *unencodedContentEncoding;
     DataBufferBlockSize = 4 * NSPageSize();
 }
 
-static inline void _raiseNoLongerValidException()
+static inline void _raiseNoLongerValidException(void)
 {
     [NSException raise:OWDataStreamNoLongerValidException format:@"Data stream no longer contains valid data"];
 }
@@ -869,4 +869,3 @@ static void deallocateBuffer(OWDataStreamBufferDescriptor *oldBuffer)
 @end
 
 NSString * const OWDataStreamNoLongerValidException = @"Stream invalid";
-
