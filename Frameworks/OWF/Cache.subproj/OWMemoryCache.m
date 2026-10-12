@@ -702,8 +702,8 @@ RCS_ID("$Id$");
     [self _lockedCancelCurrentExpireEvent];
 
     // Clear out our instance variables inside the lock, but don't actually release their contents yet
-    NSMutableDictionary *retainedArcsBySubject = arcsBySubject;
-    NSMutableSet *retainedKnownOtherContent = knownOtherContent;
+    __attribute__((unused)) NSMutableDictionary *retainedArcsBySubject = arcsBySubject;
+    __attribute__((unused)) NSMutableSet *retainedKnownOtherContent = knownOtherContent;
     arcsBySubject = CFBridgingRelease(CFDictionaryCreateMutable(kCFAllocatorDefault, 0, &OFNSObjectDictionaryKeyCallbacks, &OFNSObjectDictionaryValueCallbacks));
     knownOtherContent = [[NSMutableSet alloc] init];
     [lock unlock];
