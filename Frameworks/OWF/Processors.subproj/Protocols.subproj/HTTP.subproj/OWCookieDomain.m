@@ -53,7 +53,7 @@ BOOL OWCookiesDebug = NO;
 NSString * const OWSetCookieHeader = @"set-cookie";
 
 
-static inline void _locked_checkCookiesLoaded()
+static inline void _locked_checkCookiesLoaded(void)
 {
     if (!domainsByName) {
         [domainLock unlock];

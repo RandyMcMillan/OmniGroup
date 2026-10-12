@@ -552,7 +552,7 @@ static NSMutableArray *headerTasks = nil;
 
     // Are we dead, but just don't know it yet?
     if (treeHasActiveChildren && !flags.isHeader && !nonretainedContent && [[self childTasks] count] == 0) {
-        OWContentInfo *strongSelf = self;
+        __attribute__((unused)) OWContentInfo *strongSelf = self;
         [tasksLock lock];
         NSArray *oldTasks = tasks;
         tasks = nil;
