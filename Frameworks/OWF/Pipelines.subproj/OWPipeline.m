@@ -1137,7 +1137,7 @@ static void addBlocksToQueue(NSMutableArray *blockQueue, NSArray *pipelines, voi
 
 - (void)setContextObject:(id)anObject forKey:(NSString *)key;
 {
-    id retainedPreviousContextObject;
+    __attribute__((unused)) id retainedPreviousContextObject;
 
     [contextLock lock]; {
         retainedPreviousContextObject = [context objectForKey:key];
@@ -1435,7 +1435,7 @@ static void addBlocksToQueue(NSMutableArray *blockQueue, NSArray *pipelines, voi
 
 - (void)removeDeallocationObserver:(id <OWPipelineDeallocationObserver>)anObserver;
 {
-    id <OWPipelineDeallocationObserver> strongObserverReference = anObserver; // Don't deallocate the observer while holding our lock
+    __attribute__((unused)) id <OWPipelineDeallocationObserver> strongObserverReference = anObserver; // Don't deallocate the observer while holding our lock
     [contextLock lock];
     [OFWeakReference remove:anObserver fromReferences:_deallocationObserverReferences];
     [contextLock unlock];
@@ -1520,7 +1520,7 @@ static void addBlocksToQueue(NSMutableArray *blockQueue, NSArray *pipelines, voi
         NSMutableArray *pipelines = [targetPipelinesMapTable objectForKey:aTarget];
         OBASSERT(pipelines != nil);
 
-        OWPipeline *retainedPipeline = aPipeline;
+        __attribute__((unused)) OWPipeline *retainedPipeline = aPipeline;
 
         OBASSERT([pipelines containsObjectIdenticalTo:aPipeline]);
         [pipelines removeObjectIdenticalTo:aPipeline];
@@ -1832,7 +1832,7 @@ static void addBlocksToQueue(NSMutableArray *blockQueue, NSArray *pipelines, voi
         case OWCacheArcTraversal_WillNotify:
             if ([possibleArc resultIsSource]) {
                 [contextLock lock];
-                id <OWCacheArc> previousArc = mostRecentArcProducingSource; // Inherit retain
+                __attribute__((unused)) id <OWCacheArc> previousArc = mostRecentArcProducingSource; // Inherit retain
                 mostRecentArcProducingSource = possibleArc;
                 [contextLock unlock];
                 previousArc = nil; // Release outside the lock to avoid a deadlock when the arc tries to remove itself as a deallocation observer
