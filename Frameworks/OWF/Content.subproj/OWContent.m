@@ -612,7 +612,7 @@ static void Thingy(id mememe, SEL wheee)
 
 - (void)addHeader:(NSString *)headerName value:(id)headerValue;
 {
-    NSNotification *note;
+    __attribute__((unused)) NSNotification *note;
 
     note = nil;
 
@@ -634,7 +634,7 @@ static void Thingy(id mememe, SEL wheee)
 
 - (void)addHeader:(NSString *)headerName values:(NSArray *)values
 {
-    NSNotification *note;
+    __attribute__((unused)) NSNotification *note;
 
     note = nil;
 
@@ -657,7 +657,7 @@ static void Thingy(id mememe, SEL wheee)
 
 - (void)addHeaders:(OFMultiValueDictionary *)headers;
 {
-    NSNotification *note;
+    __attribute__((unused)) NSNotification *note;
     NSArray *newHeaders;
     NSString *headerName;
     NSUInteger newHeaderIndex, newHeaderCount;
@@ -691,7 +691,7 @@ static void Thingy(id mememe, SEL wheee)
 
 - (void)removeHeader:(NSString *)headerName;
 {
-    NSNotification *note;
+    __attribute__((unused)) NSNotification *note;
 
     note = nil;
 
@@ -1301,4 +1301,3 @@ static void Thingy(id mememe, SEL wheee)
 }
 
 @end
-

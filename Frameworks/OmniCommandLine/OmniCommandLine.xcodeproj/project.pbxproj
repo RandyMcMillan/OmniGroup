@@ -18,6 +18,7 @@
 		34824B4E1742E80400253D52 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34824B4C1742E80400253D52 /* InfoPlist.strings */; };
 		34824CBF1742E94C00253D52 /* OmniCommandLine.h in Headers */ = {isa = PBXBuildFile; fileRef = 34824CBE1742E94C00253D52 /* OmniCommandLine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		34824CC01742E95200253D52 /* OmniCommandLine_Prefix.h in Headers */ = {isa = PBXBuildFile; fileRef = 34824AB31742E3C200253D52 /* OmniCommandLine_Prefix.h */; };
+		4B0B06E0307D3D36008A57CC /* OmniAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B0B06DF307D3D36008A57CC /* OmniAppKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -212,6 +213,7 @@
 		34824B221742E75900253D52 /* OmniFoundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OmniFoundation.xcodeproj; path = ../OmniFoundation/OmniFoundation.xcodeproj; sourceTree = "<group>"; };
 		34824B4D1742E80400253D52 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
 		34824CBE1742E94C00253D52 /* OmniCommandLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OmniCommandLine.h; sourceTree = "<group>"; };
+		4B0B06DF307D3D36008A57CC /* OmniAppKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = OmniAppKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +221,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B0B06E0307D3D36008A57CC /* OmniAppKit.framework in Frameworks */,
 				34824B4B1742E77300253D52 /* OmniFoundation.framework in Frameworks */,
 				34824B4A1742E76600253D52 /* OmniBase.framework in Frameworks */,
 			);
@@ -249,6 +252,7 @@
 		34824AA61742E3C200253D52 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4B0B06DF307D3D36008A57CC /* OmniAppKit.framework */,
 				34824B221742E75900253D52 /* OmniFoundation.xcodeproj */,
 				34824B101742E74B00253D52 /* OmniBase.xcodeproj */,
 				34824AAC1742E3C200253D52 /* Foundation.framework */,
