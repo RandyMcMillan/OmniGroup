@@ -326,7 +326,7 @@ RCS_ID("$Id$");
         return OWCacheArcTraversal_HaveResult;
     }
 
-    OWTask *oldTask = nil;
+    __attribute__((unused)) OWTask *oldTask = nil;
     
     if (cachedTaskInfo == nil || cachedTaskPriority > [pipeline messageQueueSchedulingInfo].priority) {
         cachedTaskPriority = [pipeline messageQueueSchedulingInfo].priority;
@@ -607,7 +607,7 @@ RCS_ID("$Id$");
         hasThreadChange = -1;
     previousStatus = OWProcessorRetired;
 
-    OWProcessorCacheArc *strongSelf = self;
+    __attribute__((unused)) OWProcessorCacheArc *strongSelf = self;
 
     info = [[NSMutableDictionary alloc] initWithCapacity:3];
     [info setBoolValue:YES forKey:OWCacheArcIsFinishedNotificationInfoKey];
@@ -1036,7 +1036,7 @@ RCS_ID("$Id$");
 
 - (NSMutableDictionary *)debugDictionary;
 {
-    OWProcessorCacheArc *strongSelf = self;
+    __attribute__((unused)) OWProcessorCacheArc *strongSelf = self;
 
     BOOL didLock = [lock tryLock];
 
@@ -1139,7 +1139,7 @@ RCS_ID("$Id$");
 {
     BOOL locked, pipelineLocked;
     BOOL success;
-    NSObject *releaseMe;
+    __attribute__((unused)) NSObject *releaseMe;
     
     /*
      There are two ways we could enter this method: either directly called from -traverseInPipeline:, or invoked after our processor's bundle was loaded.
@@ -1346,7 +1346,7 @@ RCS_ID("$Id$");
     [context removeDeallocationObserver:self];
 
     [lock lock];
-    OWPipeline *cachedPipeline = context;
+    __attribute__((unused)) OWPipeline *cachedPipeline = context;
     context = nil;
     [lock unlock];
 

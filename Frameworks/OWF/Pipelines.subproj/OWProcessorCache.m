@@ -190,7 +190,7 @@ RCS_ID("$Id$");
 
 - (void)removeArc:(OWProcessorCacheArc *)anArc
 {
-    OWProcessorCacheArc *retainedArc = anArc; // Avoid weak-retain-release shenanigans inside the lock.
+    __attribute__((unused)) OWProcessorCacheArc *retainedArc = anArc; // Avoid weak-retain-release shenanigans inside the lock.
     
     OFWithLock(lock, ^{
         BOOL removed;
@@ -240,8 +240,8 @@ RCS_ID("$Id$");
     [lock lock];
 
     // We don't want to hold the lock longer than necessary, so within our lock we just nullify our instance variables (after caching their values on our stack)
-    __strong OFMultiValueDictionary *retainedProcessorsFromHashableSources = processorsFromHashableSources;
-    __strong NSMutableArray <OFWeakReference *> *retainedOtherProcessors = otherProcessors;
+    __attribute__((unused)) __strong OFMultiValueDictionary *retainedProcessorsFromHashableSources = processorsFromHashableSources;
+    __attribute__((unused)) __strong NSMutableArray <OFWeakReference *> *retainedOtherProcessors = otherProcessors;
     processorsFromHashableSources = nil;
     otherProcessors = nil;
     
