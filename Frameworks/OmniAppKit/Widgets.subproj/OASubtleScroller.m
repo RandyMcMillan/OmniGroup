@@ -70,11 +70,9 @@
     }
 
     static NSColor *edgeColor;
-    static NSGradient *edgeGradient;
     static dispatch_once_t once;
     dispatch_once(&once, ^{
         edgeColor = [[NSColor blackColor] colorWithAlphaComponent:0.25f];
-        edgeGradient = [[NSGradient alloc] initWithStartingColor:[NSColor clearColor] endingColor:edgeColor];
     });
     
     NSRect edgeRect;

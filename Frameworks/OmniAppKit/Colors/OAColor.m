@@ -285,7 +285,7 @@ CGColorRef OACreateCompositeColorFromColors(CGColorSpaceRef destinationColorSpac
 
     // We calculate the composite color by rendering into a 1x1px 8888RGBA bitmap.
     unsigned char bitmapData[4] = {0, 0, 0, 0};
-    CGContextRef ctx = CGBitmapContextCreate(bitmapData, 1, 1, 8, 4, destinationColorSpace, kCGImageAlphaPremultipliedLast|kCGBitmapByteOrder32Big);
+    CGContextRef ctx = CGBitmapContextCreate(bitmapData, 1, 1, 8, 4, destinationColorSpace, (CGBitmapInfo)kCGImageAlphaPremultipliedLast | kCGBitmapByteOrder32Big);
     
     CGRect pixelRect = CGRectMake(0, 0, 1, 1);
     
@@ -1499,4 +1499,3 @@ const CGFunctionCallbacks OALinearFunctionCallbacks = {0, &_OALinearColorBlendFu
 #endif
 
 NS_ASSUME_NONNULL_END
-

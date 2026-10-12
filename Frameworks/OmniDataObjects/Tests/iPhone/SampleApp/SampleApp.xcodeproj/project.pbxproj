@@ -529,6 +529,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1000;
+				TargetAttributes = {
+					1D6058900D05DD3D006BFB54 = {
+						DevelopmentTeam = M684FYCYG6;
+					};
+				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "SampleApp" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -830,6 +835,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 34D94DCE11A1AE5800A9ACC1 /* Touch-Application-Debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = M684FYCYG6;
 				INFOPLIST_FILE = Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = com.omnigroup.OmniDataObjects.iPhoneSampleApp;
 				PRODUCT_NAME = SampleApp;
@@ -841,6 +847,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 34D94DCF11A1AE5800A9ACC1 /* Touch-Application-Release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = M684FYCYG6;
 				INFOPLIST_FILE = Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = com.omnigroup.OmniDataObjects.iPhoneSampleApp;
 				PRODUCT_NAME = SampleApp;

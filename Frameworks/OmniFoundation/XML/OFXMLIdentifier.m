@@ -68,7 +68,7 @@ NSString *OFXMLCreateID(void)
     uint64_t value = OFRandomNext64();
     
     // Encoding 64 bits 6 bits at a time yields 11 characters (64/6 == 10 + rem 4).
-    char encode[OFXMLIDLength];
+    char encode[11];
     
     // We'll actually encode 4 of the bits in the first character to ensure that it is a letter (which is required in the XML 'NAME' production).
     encode[0] = OFXMLIDCharacter[value & ((1<<4) - 1)];
@@ -151,4 +151,3 @@ NSString *OFXMLCreateIDFromInteger(NSInteger value)
 
     return _OFXMLCreateIDFromBuffer(buffer, inputSize);
 }
-

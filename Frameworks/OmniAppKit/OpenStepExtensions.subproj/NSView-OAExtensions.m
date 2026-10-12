@@ -1056,7 +1056,7 @@ static unsigned int ViewMaxDebugDepth = 10;
 }
 
 // [TAB] I believe this is a false positive?
-#pragma clang diagnostic push ignored 
+#pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
 - (NSString *)description;
 {
@@ -1204,4 +1204,3 @@ static NSString *_vibrancyInfo(NSView *view, NSUInteger level)
 
 @end
 #endif
-

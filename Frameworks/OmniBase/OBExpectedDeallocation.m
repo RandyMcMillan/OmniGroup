@@ -300,7 +300,7 @@ static kern_return_t _memory_reader(task_t remote_task, vm_address_t remote_addr
 #else
     // We could just do "*local_memory = remote_address;", but it seems better to make a snapshot of the memory. We should try to avoid malloc activity while doing this enumeration, we could still have some due to ObjC message caches, background threads, etc... this is just debugging code.
     
-    static const unsigned int bufferCount = 16;
+    enum { bufferCount = 16 };
     static unsigned int bufferIndex = 0;
     
     static vm_range_t buffers[bufferCount];

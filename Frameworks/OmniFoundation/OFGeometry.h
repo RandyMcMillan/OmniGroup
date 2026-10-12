@@ -11,6 +11,7 @@
 #import <UIKit/UIGeometry.h>
 #else
 #import <Foundation/NSGeometry.h>
+#import <CoreGraphics/CGGeometry.h>
 
 @interface NSValue (NSValueCGGeometryExtensions)
 + (NSValue *)valueWithCGRect:(CGRect)rect;
@@ -131,4 +132,3 @@ static inline BOOL OFFloatEqualToFloatWithAccuracy(CGFloat f1, CGFloat f2, CGFlo
 extern CGRect OFCenteredIntegralRectInRect(CGRect enclosingRect, CGSize toCenter);
 extern CGRect OFLargestCenteredIntegralRectInRectWithAspectRatioAsSize(CGRect enclosingRect, CGSize toCenter);
 extern CGRect OFCenterAndFitIntegralRectInRectWithSameAspectRatioAsSize(CGRect enclosingRect, CGSize toCenter);
-

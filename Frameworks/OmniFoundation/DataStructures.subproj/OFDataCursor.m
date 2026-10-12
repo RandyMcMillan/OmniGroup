@@ -502,8 +502,9 @@ SKIP_DATA_OF_TYPE(OFByte, Byte);
         switch (*(OFByte *)currentPosition) {
             case '\r':
                 currentPosition++;
-                if (currentPosition + 1 <= endPosition && *(OFByte *)currentPosition == '\n')
+                if (currentPosition + 1 <= endPosition && *(OFByte *)currentPosition == '\n') {
                     currentPosition++;
+                }
                     break;
             case '\n':
                 currentPosition++;
@@ -534,8 +535,9 @@ SKIP_DATA_OF_TYPE(OFByte, Byte);
             case '\r':
                 currentPosition++;
                 if (currentPosition + 1 <= endPosition &&
-                    *(OFByte *)currentPosition == '\n')
+                    *(OFByte *)currentPosition == '\n') {
                     currentPosition++;
+                }
                     break;
             case '\n':
                 currentPosition++;

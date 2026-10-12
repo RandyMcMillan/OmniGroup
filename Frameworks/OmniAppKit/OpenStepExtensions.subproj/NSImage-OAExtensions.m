@@ -585,7 +585,7 @@ static NSData *_imageDataWithFileType(NSImage *self, NSBitmapImageFileType image
     NSInteger imageHeight = ceil(imageSize.height);
 
     CGColorSpaceRef colorSpace = CGColorSpaceCreateWithName(kCGColorSpaceSRGB);
-    CGContextRef bitmapContext = CGBitmapContextCreate(NULL, imageWidth, imageHeight, 8, 0, colorSpace, kCGImageAlphaNoneSkipLast);
+    CGContextRef bitmapContext = CGBitmapContextCreate(NULL, imageWidth, imageHeight, 8, 0, colorSpace, (CGBitmapInfo)kCGImageAlphaNoneSkipLast);
     CGColorSpaceRelease(colorSpace);
 
     NSGraphicsContext *ctx = [NSGraphicsContext graphicsContextWithCGContext:bitmapContext flipped:NO];

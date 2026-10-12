@@ -9,6 +9,7 @@
 
 #if !defined(TARGET_OS_IPHONE) || !TARGET_OS_IPHONE
 #import <Foundation/NSGeometry.h>
+#import <CoreGraphics/CGGeometry.h>
 #else
 #import <CoreGraphics/CGGeometry.h>
 #endif

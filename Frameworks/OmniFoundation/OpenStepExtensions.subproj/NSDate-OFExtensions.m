@@ -129,7 +129,7 @@ static NSDateFormatter *HttpDateFormatter(void) {
         BAD_INIT;
     }
 
-    char buf[OFHTTPStringMaximumLength+1]; // Allow room for the terminating NUL
+    char buf[30]; // Allow room for the terminating NUL
     if (![aString getCString:buf maxLength:sizeof(buf) encoding:NSASCIIStringEncoding]) { // ... which this will append.
         OBASSERT_NOT_REACHED("Unexpected encoding in HTTP date");
         BAD_INIT;
@@ -418,7 +418,7 @@ static NSDate * _Nullable _initDateFromXMLString(NSDate *self, const char *buf, 
     if (length == 0 || length > OFXMLDateStringMaximumLength)
         BAD_INIT;
     
-    char buf[OFXMLDateStringMaximumLength+1]; // Allow room for the terminating NUL
+    char buf[101]; // Allow room for the terminating NUL
     if (![xmlString getCString:buf maxLength:sizeof(buf) encoding:NSASCIIStringEncoding]) { // ... which this will append.
         OBASSERT_NOT_REACHED("Unexpected encoding in XML date");
         BAD_INIT;
@@ -474,7 +474,7 @@ static unsigned int _parse4Digits(const char *buf, unsigned int offset)
         BAD_INIT;
     }
     
-    char buf[OFXMLDateStringLength+1];
+    char buf[11];
     if (![xmlString getCString:buf maxLength:sizeof(buf) encoding:NSASCIIStringEncoding]) {
         OBASSERT_NOT_REACHED("Unexpected encoding in XML date");
 	BAD_INIT;
@@ -722,7 +722,7 @@ static NSString *_xmlStyleDateStringWithFormat(NSDate *self, SEL _cmd, OFXMLDate
         BAD_INIT;
     }
     
-    char buf[OFDateStringLength+1];
+    char buf[9];
     if (![aString getCString:buf maxLength:sizeof(buf) encoding:NSASCIIStringEncoding]) {
         OBASSERT_NOT_REACHED("Unexpected encoding in ICS date");
 	BAD_INIT;
@@ -771,7 +771,7 @@ static NSString *_xmlStyleDateStringWithFormat(NSDate *self, SEL _cmd, OFXMLDate
         BAD_INIT;
     }
     
-    char buf[OFDateStringLength+1];
+    char buf[17];
     if (![aString getCString:buf maxLength:sizeof(buf) encoding:NSASCIIStringEncoding]) {
         OBASSERT_NOT_REACHED("Unexpected encoding in ICS date");
 	BAD_INIT;
