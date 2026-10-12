@@ -500,8 +500,9 @@ static BOOL OWHTMLToSGMLObjectsDebug = NO;
                 case '\'':
                     scannerSkipPeekedCharacter(scanner);
                     value = [self _readValueWithDelimiterOFCharacterSet:(character == '"' ? EndQuotedValueOFCharacterSet : EndSingleQuotedValueOFCharacterSet) newlinesAreDelimiters:NO];
-                    if (scannerPeekCharacter(scanner) != '>')
+                    if (scannerPeekCharacter(scanner) != '>') {
                         scannerSkipPeekedCharacter(scanner);
+                    }
                         break;
                 default:
                     value = [self _readValueWithDelimiterOFCharacterSet:EndValueOFCharacterSet newlinesAreDelimiters:YES];
